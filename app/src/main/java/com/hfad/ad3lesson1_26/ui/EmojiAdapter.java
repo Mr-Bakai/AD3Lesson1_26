@@ -2,17 +2,14 @@ package com.hfad.ad3lesson1_26.ui;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.hfad.ad3lesson1_26.R;
 import com.hfad.ad3lesson1_26.data.Card;
 
@@ -20,14 +17,11 @@ public class EmojiAdapter extends RecyclerView.Adapter<EmojiAdapter.EmojiHolder>
 
     private EmojiGame game;
     private Listener listener;
-    private Context context;
 
     public EmojiAdapter(EmojiGame game,
-                        Listener listener,
-                        Context context) {
+                        Listener listener) {
         this.game = game;
         this.listener = listener;
-        this.context = context;
     }
 
     @NonNull
@@ -61,8 +55,6 @@ public class EmojiAdapter extends RecyclerView.Adapter<EmojiAdapter.EmojiHolder>
                            Listener listener) {
             super(itemView);
             this.listener = listener;
-
-            fadeIn = AnimationUtils.loadAnimation(context, R.anim.fade_in);
             tvCard = itemView.findViewById(R.id.tv_card);
         }
 
@@ -76,12 +68,6 @@ public class EmojiAdapter extends RecyclerView.Adapter<EmojiAdapter.EmojiHolder>
 
                 tvCard.setBackgroundColor(Color.WHITE);
                 tvCard.setText(card.getContent());
-
-//            } else if (card.getContent() == null) {
-//
-//                tvCard.setBackgroundColor(Color.WHITE);
-//                tvCard.setText("The game is over");
-//                Log.e("TAG", "bind:" );
 
             } else {
 

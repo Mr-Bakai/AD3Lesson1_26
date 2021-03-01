@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements EmojiAdapter.List
     private EmojiGame game;
     private TextView textOver;
 
-
     @RequiresApi(api = Build.VERSION_CODES.R)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +36,10 @@ public class MainActivity extends AppCompatActivity implements EmojiAdapter.List
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),3);
         recyclerView.setLayoutManager(gridLayoutManager);
-        adapter = new EmojiAdapter(game, this, this);
+        adapter = new EmojiAdapter(game, this);
         recyclerView.setAdapter(adapter);
     }
+
 
     @Override
     public void cardClick(Card<String> card) {

@@ -69,7 +69,6 @@ public class Card<CardContent> {
         return Objects.hash(isFacedUp, isMatched, content, id);
     }
 
-
     @Override
     public String toString() {
         return "Card{" +
